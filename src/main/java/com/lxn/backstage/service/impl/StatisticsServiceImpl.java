@@ -36,4 +36,13 @@ public class StatisticsServiceImpl extends MPJBaseServiceImpl<MemberMapper, Memb
     public List<RoomMembers> roomsHasMember(String userAccount) {
         return statisticsMapper.roomsHasMember(userAccount);
     }
+
+    @Override
+    public List MemberStatus(String userAccount) {
+        QueryWrapper<Member> memberQueryWrapper = new QueryWrapper<>();
+//        memberQueryWrapper.eq()
+
+
+        return null;
+    }
 }

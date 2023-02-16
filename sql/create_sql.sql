@@ -5,13 +5,13 @@ CREATE DATABASE IF NOT EXISTS learn_room;
 USE learn_room;
 
 -- 用户表
-CREATE TABLE IF NOT EXISTS USER
-(
+CREATE TABLE IF NOT EXISTS USER (
     id           BIGINT AUTO_INCREMENT COMMENT 'id' PRIMARY KEY,
     userName     VARCHAR(256)                           NULL COMMENT '用户昵称',
     userAccount  VARCHAR(256)                           NOT NULL COMMENT '账号',
     userAvatar   VARCHAR(1024)                          NULL COMMENT '用户头像',
-    gender       TINYINT                                NULL COMMENT '性别',
+    gender       VARCHAR(15)                            NULL COMMENT '性别',
+    userPhone    VARCHAR(15)                            NULL COMMENT '手机号',
     userRole     VARCHAR(256) DEFAULT 'user'            NOT NULL COMMENT '用户角色：user/ admin/ merchant',
     userPassword VARCHAR(512)                           NOT NULL COMMENT '密码',
     createTime   DATETIME     DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT '创建时间',

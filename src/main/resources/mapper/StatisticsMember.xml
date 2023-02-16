@@ -4,11 +4,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lxn.backstage.mapper.StatisticsMapper">
 
-    <resultMap id="BaseResultMap" type="com.lxn.backstage.model.unite.RoomMembers">
+    <resultMap id="BaseResultMap" type="com.lxn.backstage.model.unite.Statistics">
         <id property="Id" column="Id" jdbcType="BIGINT"/>
         <result property="Name" column="Name" jdbcType="VARCHAR"/>
         <result property="count" column="count" jdbcType="BIGINT"/>
     </resultMap>
+
     <select id="roomsHasMember" resultMap="BaseResultMap" parameterType="java.lang.String">
         SELECT t1.`roomId` AS Id,
                t1.`roomName` AS Name,

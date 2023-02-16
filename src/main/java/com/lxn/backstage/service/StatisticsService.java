@@ -13,5 +13,6 @@ public interface StatisticsService  extends MPJBaseService<Member> {
      * @return
      */
     List roomsHasMember(String userAccount);
+    List MemberStatus(String userAccount);
 }
 

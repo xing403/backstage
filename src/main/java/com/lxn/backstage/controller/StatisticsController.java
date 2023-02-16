@@ -23,32 +23,6 @@ import java.util.Map;
 public class StatisticsController {
     @Resource
     private StatisticsService statisticsService;
-    /**
-     * 会员统计
-     *
-     * @param roomRequest
-     * @return
-     */
-//    @PostMapping("/detail")
-//    public BaseResponse<HashMap> memberStatistics(@RequestBody RoomRequest roomRequest) {
-//        HashMap<String, Long> dataMap = new HashMap<>();
-//        System.out.println(roomRequest);
-//        Integer roomId = roomRequest.getRoomId();
-//        // 统计当前自习室的会员数
-//        Long count = memberService.statisticsMemberByRoomId(roomId);
-//        if (count == null){
-//            throw new BusinessException(ErrorCode.PARAMS_ERROR, "自习室不存在");
-//        }
-//        dataMap.put("statisticsMemberByRoomId",count);
-//        // 统计所有自习室的会员数
-//        String userAccount = roomRequest.getUserAccount();
-//        count = memberService.statisticsMemeberByUserAccount(userAccount);
-//        if (count == null){
-//            throw new BusinessException(ErrorCode.PARAMS_ERROR, "用户不存在");
-//        }
-//        dataMap.put("statisticsMemberByUserAccount",count);
-//        return ResultUtils.success(dataMap, "");
-//    }
 
     /** 商家统计页面内
      * @param user
@@ -64,6 +38,9 @@ public class StatisticsController {
         List list = statisticsService.roomsHasMember(userAccount);
         HashMap<String, Object> stringObjectHashMap = new HashMap<>();
         stringObjectHashMap.put("room_numbers",list);
+
+
+
         return ResultUtils.success(stringObjectHashMap,"OK");
 
     }
