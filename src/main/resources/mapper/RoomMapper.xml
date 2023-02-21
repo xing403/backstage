@@ -18,7 +18,7 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        roomId,roomName,roomSeat,roomAddress,
+        roomId,roomName,roomSeat,roomAddress
         roomPhone,roomDesc,userAccount,
         createTime,updateTime,isDelete,
     </sql>

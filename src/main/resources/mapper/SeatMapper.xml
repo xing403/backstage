@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lxn.backstage.mapper.SeatMapper">
+
+    <resultMap id="BaseResultMap" type="com.lxn.backstage.model.entity.Seat">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="userAccount" column="userAccount" jdbcType="VARCHAR"/>
+        <result property="roomId" column="roomId" jdbcType="INTEGER"/>
+        <result property="seatStatus" column="seatStatus" jdbcType="INTEGER"/>
+        <result property="seatId" column="seatId" jdbcType="VARCHAR"/>
+        <result property="time" column="time" jdbcType="TIMESTAMP"/>
+        <result property="isDelete" column="isDelete" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,userAccount,roomId,seatStatus
+        seatId,time,isDelete
+    </sql>
+</mapper>

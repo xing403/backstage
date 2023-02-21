@@ -31,17 +31,15 @@ public class RoomController {
      */
     @PostMapping("/addition")
     public BaseResponse<Long> roomRegister(@RequestBody RoomRegisterRequest roomRegisterRequest) {
-        if (roomRegisterRequest == null) {
-            throw new BusinessException(ErrorCode.PARAMS_ERROR);
-        }
         String roomName = roomRegisterRequest.getRoomName();
         String roomPhone = roomRegisterRequest.getRoomPhone();
         Integer roomSeat = roomRegisterRequest.getRoomSeat();
         String roomDesc = roomRegisterRequest.getRoomDesc();
         String roomAddress = roomRegisterRequest.getRoomAddress();
         String userAccount = roomRegisterRequest.getUserAccount();
-        if (StringUtils.isAnyBlank(userAccount, roomName, roomDesc, roomPhone)) {
-            return null;
+
+        if (StringUtils.isAnyBlank(userAccount, roomName, roomPhone) || roomSeat <= 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "参数错误");
         }
         long result = roomService.roomRegister(roomName, roomPhone, roomSeat, roomAddress, roomDesc, userAccount);
         return ResultUtils.success(result, "添加成功");

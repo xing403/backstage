@@ -5,11 +5,12 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.io.Serializable;
 import java.util.Date;
 
-@TableName(value = "room")
 @Data
-public class Room {
+@TableName(value = "room")
+public class Room implements Serializable {
     /**
      * 编号
      */
@@ -54,5 +55,4 @@ public class Room {
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
-
 }
